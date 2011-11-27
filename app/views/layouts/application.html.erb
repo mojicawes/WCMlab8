@@ -10,7 +10,24 @@
 	<div class="container">
       <%= render 'layouts/header' %>
       <section class = "round" >
-          <%= yield %>
+          <div id="inside">
+	<div id="main">
+	<%= yield %>
+	</div>
+	
+	<div id="sidebar">
+		SIDEBAR
+		<p>
+			Navigation
+			<ul>
+			<%= link_to "Sign up", new_user_path %>
+			</ul>
+		</p>
+	</div>
+	
+	<div id="footer">FOOTER to contain disclaimer</div>
+</div>
+
       </section>
   </div>
 </body>
