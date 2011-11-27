@@ -1,0 +1,37 @@
+#banner {
+	background-color: #CC0066;
+	height: 100px;
+}
+
+#inside {
+	background-color: #3366FF;
+	margin:0 auto;
+	width: 800px;
+}
+
+#sidebar {
+	background-color: #3366FF;
+	width: 200px;
+	float: left;
+}
+
+#main {
+	background-color: #CCFF66;
+	width: 600px;
+	float: right;
+}
+#footer {
+	background-color: #66CCFF;
+	clear: both;
+}
+
+body, html {
+    margin:0;
+    padding:0;
+    color:#000;
+    background:#a7a09a;
+}
+#bar {
+	background-color: #FF99FF;
+	text-align: center;
+}
