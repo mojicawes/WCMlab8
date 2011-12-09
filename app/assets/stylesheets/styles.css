@@ -1,27 +1,27 @@
 #banner {
-	background-color: #CC0066;
+	background-color: #2F4F4F;
 	height: 100px;
 }
 
 #inside {
-	background-color: #3366FF;
+	background-color: #2F4F4F;
 	margin:0 auto;
 	width: 800px;
 }
 
 #sidebar {
-	background-color: #3366FF;
+	background-color: #2F4F4F;
 	width: 200px;
 	float: left;
 }
 
 #main {
-	background-color: #CCFF66;
+	background-color: #2F4F4F;
 	width: 600px;
 	float: right;
 }
 #footer {
-	background-color: #66CCFF;
+	background-color: #2F4F4F;
 	clear: both;
 }
 
@@ -29,7 +29,7 @@ body, html {
     margin:0;
     padding:0;
     color:#000;
-    background:#a7a09a;
+    background:#2F4F4F;
 }
 #bar {
 	background-color: #FF99FF;

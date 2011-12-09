@@ -1,0 +1,13 @@
+<%= form_for(:session, :url => sessions_path) do |f| %>
+<h1>Signing up for simple.list</h1>
+  <div class="field" >
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </div>
+  
+  <div class="actions" >
+    <%= f.submit "Sign in" %>
+  </div>
+<% end %>
+
+<p>New user? Click <%= link_to "here to get started!", signup_path %></p>

@@ -1,38 +1,6 @@
-	MAIN area for content (lists)
-		<h2>My List</h2>
-			<ul>
-			<li>Something</li>
-			<li>Something</li>
-			<li>Something</li>
-			<li>Something</li>
-			<li>Something</li>
-			<li>Something</li>
-			<li>Something</li>
-			<li>Something</li>
-			<li>Something</li>
-			<li>Something</li>
-			<li>Something</li>
-			<li>Something</li>
-			<li>Something</li>
-			<li>Something</li>
-			<li>Something</li>
-			<li>Something</li>
-			<li>Something</li>
-			<li>Something</li>
-			<li>Something</li>
-			<li>Something</li>
-			<li>Something</li>
-			<li>Something</li>
-			<li>Something</li>
-			<li>Something</li>
-			<li>Something</li>
-			<li>Something</li>
-			<li>Something</li>
-			<li>Something</li>
-			<li>Something</li>
-			<li>Something</li>
-			<li>Something</li>
-			<li>Something</li>
-
-			</ul>
-	
+<% if signed_in? %>
+asdf
+<% else %>
+<h1>Get started!</h1>
+<%= link_to "Sign up now!", new_user_path, :class => "signup_button round" %>
+<% end %>
