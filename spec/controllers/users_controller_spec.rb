@@ -5,8 +5,9 @@ describe UsersController do
 
   describe "failure" do
     before(:each) do
-      @attr = ( :name => "", :email => "", :password => "",
-                :password_confirmation => "")
+      @attr = { :name => "", :email => "", :password => "",
+                :password_confirmation => ""
+      }
     end
     
     it "should not create a user" do
@@ -70,6 +71,10 @@ describe UsersController do
   describe "POST 'create'" do
     describe "success" do
 
+      it "should sign the user in" do
+        post :create, :user => @attr
+        controller.should be_signed_in
+      end
       before(:each) do
         @attr = {:name     => "John Doe",
                  :email    => "jdoe@cs.utsa.edu",
