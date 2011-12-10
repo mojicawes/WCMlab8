@@ -12,7 +12,12 @@
       <section class = "round" >
           <div id="inside">
 	<div id="main">
-	<%= yield %>
+      <section class = "round" >
+      	<% flash.each do |key, value| %>
+      	  <div class="flash <%= key %>"><%= value %></div>
+      	<% end %>
+		<%= yield %>
+	  </section>
 	</div>
 	
 	<div id="sidebar">

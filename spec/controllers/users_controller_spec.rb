@@ -72,10 +72,10 @@ describe UsersController do
 
       before(:each) do
         @attr = {:name     => "John Doe",
-          :email    => "jdoe@cs.utsa.edu",
-          :password => "john1"}
+                 :email    => "jdoe@cs.utsa.edu",
+                 :password => "john1"}
       end
-
+      
       it "should create a user" do
         lambda do
           post :create, :user => @attr
@@ -86,7 +86,11 @@ describe UsersController do
         post :create, :user => @attr
         response.should redirect_to(user_path(assigns(:user)))
       end
-
+      
+      it "should have a welcome message" do
+        post :create, :user => @attr
+        flash[:success].should =~ /welcome to the sample app/i
+      end
     end
   end
 
