@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-  describe UsersController do
+describe UsersController do
   render_views
 
   describe "GET 'new'" do
@@ -14,13 +14,15 @@ require 'spec_helper'
       response.should have_selector("title", :content => "Sign up")
     end
   end
-  
+
   describe "GET 'show'" do
-    
+
     before(:each) do
-      @user = User.create!(:name => "John Doe", :email => "jdoe@example.com")
+      @user = User.create!(:name  => "John Doe",
+      :email => "jdoe@cs.utsa.edu",
+      :password => "john1")
     end
-    
+
     it "it should be successful" do
       get :show, :id => @user.id
       response.should be_success
@@ -36,7 +38,9 @@ require 'spec_helper'
     describe "success" do
 
       before(:each) do
-        @attr = {:name => "John Doe", :email => "jdoe@example.com"}
+        @attr = {:name     => "John Doe",
+          :email    => "jdoe@cs.utsa.edu",
+          :password => "john1"}
       end
 
       it "should create a user" do
@@ -52,7 +56,7 @@ require 'spec_helper'
 
     end
   end
-  
+
   describe "GET 'index'" do
     it "returns http success" do
       get :index
