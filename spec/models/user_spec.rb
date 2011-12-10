@@ -90,6 +90,16 @@ describe User do
       @user = User.create!(@attr)
     end
 
+    describe "has_password? method" do
+      it "should be true if the passwords match" do
+        @user.has_password?(@attr[:password]).should be_true
+      end
+      
+      it "should be false if the passwords don't match" do
+        @user.has_password?("invalid").should be_false
+      end
+    end
+    
     it "should have an encrypted password attribute" do
       @user.should respond_to(:encrypted_password)
     end
