@@ -254,3 +254,13 @@ REQUESTING PAGE: GET /users with {} and HTTP headers {}
 REQUESTING PAGE: GET / with {} and HTTP headers {"HTTP_REFERER"=>"/users"}
 REQUESTING PAGE: GET /users with {} and HTTP headers {}
 REQUESTING PAGE: GET / with {} and HTTP headers {"HTTP_REFERER"=>"/users"}
+REQUESTING PAGE: GET /users with {} and HTTP headers {}
+REQUESTING PAGE: GET / with {} and HTTP headers {"HTTP_REFERER"=>"/users"}
+REQUESTING PAGE: GET /users with {} and HTTP headers {}
+REQUESTING PAGE: GET / with {} and HTTP headers {"HTTP_REFERER"=>"/users"}
+REQUESTING PAGE: GET /users with {} and HTTP headers {}
+REQUESTING PAGE: GET / with {} and HTTP headers {"HTTP_REFERER"=>"/users"}
+REQUESTING PAGE: GET /users with {} and HTTP headers {}
+REQUESTING PAGE: GET / with {} and HTTP headers {"HTTP_REFERER"=>"/users"}
+REQUESTING PAGE: GET /users with {} and HTTP headers {}
+REQUESTING PAGE: GET / with {} and HTTP headers {"HTTP_REFERER"=>"/users"}
