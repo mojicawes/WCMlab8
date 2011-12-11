@@ -1,6 +1,16 @@
 class ItemsController < ApplicationController
-  # GET /items
-  # GET /items.json
+  before_filter :authenticate, :only => [:create, :destroy]
+  before_filter :authorized_user, :only => :destroy
+  def create
+    @item = current_user.items.build(params[:item])
+    if @item.save
+    flash[:success] = "Item created!"
+    redirect_to root_path
+    else
+    render 'pages/home'
+    end
+  end
+
   def index
     @items = Item.all
 
@@ -10,8 +20,11 @@ class ItemsController < ApplicationController
     end
   end
 
-  # GET /items/1
-  # GET /items/1.json
+  def edit
+    @item = Item.find(params[:id])
+    @title = "Edit item"
+  end
+
   def show
     @item = Item.find(params[:id])
 
@@ -21,40 +34,6 @@ class ItemsController < ApplicationController
     end
   end
 
-  # GET /items/new
-  # GET /items/new.json
-  def new
-    @item = Item.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @item }
-    end
-  end
-
-  # GET /items/1/edit
-  def edit
-    @item = Item.find(params[:id])
-  end
-
-  # POST /items
-  # POST /items.json
-  def create
-    @item = Item.new(params[:item])
-
-    respond_to do |format|
-      if @item.save
-        format.html { redirect_to @item, notice: 'Item was successfully created.' }
-        format.json { render json: @item, status: :created, location: @item }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @item.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # PUT /items/1
-  # PUT /items/1.json
   def update
     @item = Item.find(params[:id])
 
@@ -69,15 +48,15 @@ class ItemsController < ApplicationController
     end
   end
 
-  # DELETE /items/1
-  # DELETE /items/1.json
   def destroy
-    @item = Item.find(params[:id])
     @item.destroy
+    redirect_back_or root_path
+  end
 
-    respond_to do |format|
-      format.html { redirect_to items_url }
-      format.json { head :ok }
-    end
+  private
+
+  def authorized_user
+    @item = Item.find(params[:id])
+    redirect_to root_path unless current_user?(@item.user)
   end
 end

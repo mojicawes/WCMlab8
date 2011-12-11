@@ -25,7 +25,7 @@
 			<ul>
 			<li><%= link_to "Home", root_path %></li>
 			<% if signed_in? %>
-			<li><%= link_to "My List", users_path(@user) %>
+			<li><%= link_to "My List", current_user %></li>
 			<li><%= link_to "Sign out", signout_path %></li>
 			<% else %>
 			<li><%= link_to "Sign in", signin_path %></li>
@@ -36,7 +36,7 @@
 	<div id="footer">All work done by Westley Mojica</div>
 </div>
 
-      </section>
+</section>
   </div>
 </body>
 </html>
