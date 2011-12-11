@@ -50,7 +50,7 @@ class ItemsController < ApplicationController
 
   def destroy
     @item.destroy
-    redirect_back_or root_path
+    redirect_to user_path(current_user)
   end
 
   private

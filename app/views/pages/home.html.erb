@@ -1,12 +1,6 @@
 <% if signed_in? %>
-  <table class="front" summary="For signed-in users">
-  	<tr>
-  		<td class="main">
-  			<h1 class="item">Create a new list item</h1>
-  			<%= render 'shared/item_form' %>
-  		</td>
-  	</tr>
-  </table>
+<h1>Add an item to your list</h1>
+<%= render 'shared/item_form' %>
 <% else %>
 <h1>Get started!</h1>
 <%= link_to "Sign up now!", new_user_path, :class => "signup_button round" %>
