@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     if @user.save
       sign_in @user
-      flash[:success] = "Welcome to the Sample App!"
+      flash[:success] = "Welcome to simple.list!"
       redirect_to user_path(@user)
     else
       @title = "Sign up"
@@ -18,6 +18,7 @@ class UsersController < ApplicationController
   
   def show  # responds to get /user/i by rendering show.html.erb
     @user = User.find(params[:id])
+    @items = @user.items.paginate(:page => params[:page])
     @title = @user.name
   end
   

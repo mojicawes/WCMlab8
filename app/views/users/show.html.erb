@@ -7,3 +7,10 @@
 <%= link_to 'Home',  root_path %>
 
 <%= debug(params) if Rails.env.development? %>
+
+<% unless @user.items.empty? %>
+  <table class="items" summary="User items">
+  	<%= render @items %>
+  </table>
+  <%= will_paginate @items %>
+<% end %>

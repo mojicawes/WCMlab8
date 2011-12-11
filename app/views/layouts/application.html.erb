@@ -22,20 +22,17 @@
 	
 	<div id="sidebar">
 		<p>
-			<h3>navigation</h3>
 			<ul>
 			<li><%= link_to "Home", root_path %></li>
-			<li><%= link_to "About", about_path %></li>
-
 			<% if signed_in? %>
-			<li><%= link_to "Sign out", signout_path %></li> 
+			<li><%= link_to "Sign out", signout_path %></li>
 			<% else %>
 			<li><%= link_to "Sign in", signin_path %></li>
 			<% end %>
 		</p>
 	</div>
 	
-	<div id="footer">FOOTER to contain disclaimer</div>
+	<div id="footer">All work done by Westley Mojica</div>
 </div>
 
       </section>

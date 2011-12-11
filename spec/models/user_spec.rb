@@ -3,6 +3,17 @@ require 'spec_helper'
 
 
 describe User do
+  
+  describe "items associations" do
+    before(:each) do
+      @user = User.create(attr)
+    end
+    
+    it "should have a items attribute" do
+      @user.should respond_to(:items)
+    end
+    
+  end
   before (:each) do
     @attr = {
       :name => "Example User",
