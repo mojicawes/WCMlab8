@@ -1,19 +1,30 @@
 require 'spec_helper'
 
-
-
 describe User do
   
   describe "items associations" do
     before(:each) do
-      @user = User.create(attr)
+      @user = User.create(@attr)
+      @i1 = Factory(@items, :user => @user, :create_at => 1.day.ago)
+      @i2 = Factory(@items, :user => @user, :create_at => 1.hour.ago)
     end
     
-    it "should have a items attribute" do
+    it "should have an items attribute" do
       @user.should respond_to(:items)
     end
     
+    it "should have the right items in the right order" do
+      @user.items.should == [@i1, @i2]
+    end
+    
+    it "should destroy associated items" do
+      @user.destroy
+      [@i1, @i2].each do |items|
+        Item.find_by_id(items.id).should be_nil
+      end
+    end
   end
+  
   before (:each) do
     @attr = {
       :name => "Example User",
